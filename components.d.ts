@@ -14,8 +14,10 @@ declare module 'vue' {
     ATypography: typeof import('@arco-design/web-vue')['Typography']
     ATypographyTitle: typeof import('@arco-design/web-vue')['TypographyTitle']
     Hello: typeof import('./src/components/Hello.vue')['default']
+    IconBtn: typeof import('./src/components/Button/IconBtn.vue')['default']
     ParentSelect: typeof import('./src/components/ParentSelect.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Titlebar: typeof import('./src/components/Titlebar.vue')['default']
   }
 }

@@ -1,39 +1,16 @@
-# Arco Uno Basic Template
+# Historical Placename Exploration and Visualization Tool 历史地名探索与可视化工具[项目]
 
 ## Features
 
-- ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
-
-- 🗂 [File based routing](./src/pages)
-
-- 📦 [Components auto importing](./src/components)
-
-- 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
-
-- 😃 Use icons from any icon sets in [Pure CSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
-
-- 🔥 Use the [new `<script setup>` style](https://github.com/vuejs/rfcs/pull/227)
-
-- ✅ Use [Arco UI](https://arco.design/vue/docs/start) UI Framework
-
-- 🦾 TypeScript, of course
-
-- ☁️ Deploy on Netlify, zero-config
-
-## Try it now!
-
-> arco-uno-basic-template requires Node >=14.18
-
-### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/lanseria/arco-uno-basic-template/generate).
-
-### Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-```bash
-npx degit lanseria/arco-uno-basic-template my-arco-uno-app
-cd my-arco-uno-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
-```
+- 登录/邀请码注册/同时有验证码阻碍暴力请求
+- 爬取了 https://maps.cga.harvard.edu/tgaz/ 的数据库
+- 初始加载当前年份数据
+- 可以按照地名，年份，筛选类型，其中类型可以直接编辑
+- 展现搜索结果数据
+- 切换5种图层（），显示地名
+- 首先可以配置点线面的初始属性
+- 点（大小，点颜色，文字大小/颜色/描边颜色），线（线宽，颜色，透明度），面（填充颜色，先颜色，透明度）栅格（透明度）
+- 可以画画，如点，线，面，圆，细直箭头，突击方向，钳击，进攻箭头，燕尾进攻箭头，战斗小队
+- 可以导入KML，导入TIFF，导入SHP文件，并同步配置
+- 可以创建视点飞行，保存飞行历史记录
+- 含有黑暗模式
