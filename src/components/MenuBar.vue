@@ -12,7 +12,7 @@
       <div>
         <IconBtn icon-name="i-carbon-rotate-360" tooltip-name="刷新" />
         <IconBtn icon-name="i-carbon-settings" tooltip-name="设置" />
-        <IconBtn icon-name="i-carbon-sun dark:i-carbon-moon" tooltip-name="主题" @click="toggleDark" />
+        <IconBtn icon-name="i-carbon-sun dark:i-carbon-moon" tooltip-name="主题" @click="() => toggleDark()" />
         <IconBtn icon-name="i-carbon-help" tooltip-name="关于" />
       </div>
     </div>

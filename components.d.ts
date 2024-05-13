@@ -7,16 +7,10 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AButton: typeof import('@arco-design/web-vue')['Button']
     AConfigProvider: typeof import('@arco-design/web-vue')['ConfigProvider']
-    ASelect: typeof import('@arco-design/web-vue')['Select']
-    ASpace: typeof import('@arco-design/web-vue')['Space']
-    ATypography: typeof import('@arco-design/web-vue')['Typography']
-    ATypographyTitle: typeof import('@arco-design/web-vue')['TypographyTitle']
-    Hello: typeof import('./src/components/Hello.vue')['default']
     IconBtn: typeof import('./src/components/Button/IconBtn.vue')['default']
+    MapContainer: typeof import('./src/components/MapContainer.vue')['default']
     MenuBar: typeof import('./src/components/MenuBar.vue')['default']
-    ParentSelect: typeof import('./src/components/ParentSelect.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Titlebar: typeof import('./src/components/Titlebar.vue')['default']

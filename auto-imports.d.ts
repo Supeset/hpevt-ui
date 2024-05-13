@@ -12,7 +12,12 @@ declare global {
   const $ref: typeof import('vue/macros')['$ref']
   const $shallowRef: typeof import('vue/macros')['$shallowRef']
   const $toRef: typeof import('vue/macros')['$toRef']
+  const BASE_LAYER: typeof import('./src/composables/constant/map')['BASE_LAYER']
   const EffectScope: typeof import('vue')['EffectScope']
+  const MAP_INIT_CENTER: typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']
+  const MAP_INIT_ZOOM: typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']
+  const MAP_MAPBOX_TOKEN: typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']
+  const MAP_STYLE: typeof import('./src/composables/constant/map')['MAP_STYLE']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -51,6 +56,7 @@ declare global {
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const lsShowMenuBar: typeof import('./src/composables/store/localStorage')['lsShowMenuBar']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
   const nextTick: typeof import('vue')['nextTick']
@@ -92,6 +98,7 @@ declare global {
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
+  const setLsShowMenuBar: typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
   const shallowRef: typeof import('vue')['shallowRef']
@@ -304,7 +311,12 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly BASE_LAYER: UnwrapRef<typeof import('./src/composables/constant/map')['BASE_LAYER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly MAP_INIT_CENTER: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']>
+    readonly MAP_INIT_ZOOM: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']>
+    readonly MAP_MAPBOX_TOKEN: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']>
+    readonly MAP_STYLE: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_STYLE']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -343,6 +355,7 @@ declare module 'vue' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly lsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['lsShowMenuBar']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
@@ -384,6 +397,7 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setLsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
@@ -589,7 +603,12 @@ declare module 'vue' {
 declare module '@vue/runtime-core' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
+    readonly BASE_LAYER: UnwrapRef<typeof import('./src/composables/constant/map')['BASE_LAYER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly MAP_INIT_CENTER: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']>
+    readonly MAP_INIT_ZOOM: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']>
+    readonly MAP_MAPBOX_TOKEN: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']>
+    readonly MAP_STYLE: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_STYLE']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -628,6 +647,7 @@ declare module '@vue/runtime-core' {
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly lsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['lsShowMenuBar']>
     readonly makeDestructurable: UnwrapRef<typeof import('@vueuse/core')['makeDestructurable']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
@@ -669,6 +689,7 @@ declare module '@vue/runtime-core' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setLsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
