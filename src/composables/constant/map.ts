@@ -6,10 +6,10 @@ export const MAP_INIT_CENTER: LngLatLike = [108.84, 31.06]
 export const MAP_INIT_ZOOM = 4
 
 export const BASE_LAYER = [
+  'mapbox-style1',
   'tianditu-terrain',
   'tianditu-image',
   'tianditu-vector',
-  'mapbox-style1',
   'mapbox-style2',
   'mapbox-style3',
 ]

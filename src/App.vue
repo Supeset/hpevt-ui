@@ -5,6 +5,7 @@ import zhCN from '@arco-design/web-vue/es/locale/lang/zh-cn'
 <template>
   <AConfigProvider
     :locale="zhCN"
+    size="mini"
   >
     <main font-sans text="gray-700 dark:gray-200">
       <RouterView />

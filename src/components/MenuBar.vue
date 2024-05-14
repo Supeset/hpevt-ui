@@ -4,10 +4,13 @@
   <div class="w-40px flex flex-col items-center border-r-1px border-gray-1 bg-white py-1px dark:border-gray-8 dark:bg-black">
     <div class="h-full w-full flex flex-col justify-between">
       <div>
-        <IconBtn icon-name="i-carbon-data-volume" tooltip-name="数据" />
-        <IconBtn icon-name="i-carbon-draw" tooltip-name="标注" />
-        <IconBtn icon-name="i-carbon-document-import" tooltip-name="导入" />
-        <IconBtn icon-name="i-carbon-flight-roster" tooltip-name="飞行" />
+        <IconBtn
+          v-for="item in MENU_TAB_LIST" :key="item.value"
+          :icon-name="item.icon"
+          :tooltip-name="item.name"
+          :active="globalActiveTabMenuValue === item.value"
+          @click="setGlobalActiveTabMenuValue(item.value)"
+        />
       </div>
       <div>
         <IconBtn icon-name="i-carbon-rotate-360" tooltip-name="刷新" />

@@ -14,10 +14,13 @@ declare global {
   const $toRef: typeof import('vue/macros')['$toRef']
   const BASE_LAYER: typeof import('./src/composables/constant/map')['BASE_LAYER']
   const EffectScope: typeof import('vue')['EffectScope']
+  const MAP_DATA_MAX_YEAR: typeof import('./src/composables/constant/mapData')['MAP_DATA_MAX_YEAR']
+  const MAP_DATA_MIN_YEAR: typeof import('./src/composables/constant/mapData')['MAP_DATA_MIN_YEAR']
   const MAP_INIT_CENTER: typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']
   const MAP_INIT_ZOOM: typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']
   const MAP_MAPBOX_TOKEN: typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']
   const MAP_STYLE: typeof import('./src/composables/constant/map')['MAP_STYLE']
+  const MENU_TAB_LIST: typeof import('./src/composables/constant/menu')['MENU_TAB_LIST']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
   const computed: typeof import('vue')['computed']
@@ -46,6 +49,8 @@ declare global {
   const extendRef: typeof import('@vueuse/core')['extendRef']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const globalActiveTabMenu: typeof import('./src/composables/store/global')['globalActiveTabMenu']
+  const globalActiveTabMenuValue: typeof import('./src/composables/store/global')['globalActiveTabMenuValue']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
@@ -98,6 +103,7 @@ declare global {
   const resolveComponent: typeof import('vue')['resolveComponent']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
+  const setGlobalActiveTabMenuValue: typeof import('./src/composables/store/global')['setGlobalActiveTabMenuValue']
   const setLsShowMenuBar: typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']
   const shallowReactive: typeof import('vue')['shallowReactive']
   const shallowReadonly: typeof import('vue')['shallowReadonly']
@@ -313,10 +319,13 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly BASE_LAYER: UnwrapRef<typeof import('./src/composables/constant/map')['BASE_LAYER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly MAP_DATA_MAX_YEAR: UnwrapRef<typeof import('./src/composables/constant/mapData')['MAP_DATA_MAX_YEAR']>
+    readonly MAP_DATA_MIN_YEAR: UnwrapRef<typeof import('./src/composables/constant/mapData')['MAP_DATA_MIN_YEAR']>
     readonly MAP_INIT_CENTER: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']>
     readonly MAP_INIT_ZOOM: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']>
     readonly MAP_MAPBOX_TOKEN: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']>
     readonly MAP_STYLE: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_STYLE']>
+    readonly MENU_TAB_LIST: UnwrapRef<typeof import('./src/composables/constant/menu')['MENU_TAB_LIST']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -345,6 +354,8 @@ declare module 'vue' {
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly globalActiveTabMenu: UnwrapRef<typeof import('./src/composables/store/global')['globalActiveTabMenu']>
+    readonly globalActiveTabMenuValue: UnwrapRef<typeof import('./src/composables/store/global')['globalActiveTabMenuValue']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -397,6 +408,7 @@ declare module 'vue' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setGlobalActiveTabMenuValue: UnwrapRef<typeof import('./src/composables/store/global')['setGlobalActiveTabMenuValue']>
     readonly setLsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
@@ -605,10 +617,13 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly BASE_LAYER: UnwrapRef<typeof import('./src/composables/constant/map')['BASE_LAYER']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly MAP_DATA_MAX_YEAR: UnwrapRef<typeof import('./src/composables/constant/mapData')['MAP_DATA_MAX_YEAR']>
+    readonly MAP_DATA_MIN_YEAR: UnwrapRef<typeof import('./src/composables/constant/mapData')['MAP_DATA_MIN_YEAR']>
     readonly MAP_INIT_CENTER: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_CENTER']>
     readonly MAP_INIT_ZOOM: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_INIT_ZOOM']>
     readonly MAP_MAPBOX_TOKEN: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_MAPBOX_TOKEN']>
     readonly MAP_STYLE: UnwrapRef<typeof import('./src/composables/constant/map')['MAP_STYLE']>
+    readonly MENU_TAB_LIST: UnwrapRef<typeof import('./src/composables/constant/menu')['MENU_TAB_LIST']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
@@ -637,6 +652,8 @@ declare module '@vue/runtime-core' {
     readonly extendRef: UnwrapRef<typeof import('@vueuse/core')['extendRef']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
+    readonly globalActiveTabMenu: UnwrapRef<typeof import('./src/composables/store/global')['globalActiveTabMenu']>
+    readonly globalActiveTabMenuValue: UnwrapRef<typeof import('./src/composables/store/global')['globalActiveTabMenuValue']>
     readonly h: UnwrapRef<typeof import('vue')['h']>
     readonly ignorableWatch: UnwrapRef<typeof import('@vueuse/core')['ignorableWatch']>
     readonly inject: UnwrapRef<typeof import('vue')['inject']>
@@ -689,6 +706,7 @@ declare module '@vue/runtime-core' {
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
     readonly resolveRef: UnwrapRef<typeof import('@vueuse/core')['resolveRef']>
     readonly resolveUnref: UnwrapRef<typeof import('@vueuse/core')['resolveUnref']>
+    readonly setGlobalActiveTabMenuValue: UnwrapRef<typeof import('./src/composables/store/global')['setGlobalActiveTabMenuValue']>
     readonly setLsShowMenuBar: UnwrapRef<typeof import('./src/composables/store/localStorage')['setLsShowMenuBar']>
     readonly shallowReactive: UnwrapRef<typeof import('vue')['shallowReactive']>
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
