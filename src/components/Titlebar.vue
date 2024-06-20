@@ -10,7 +10,7 @@ function handleAbout() {
     <div class="flex items-center gap-4">
       <IconBtn icon-name="i-carbon-menu" tooltip-name="菜单" @click="setLsShowMenuBar(!lsShowMenuBar)" />
       <div class="font-bold">
-        历史地名探索与可视化工具 Historical Placename Exploration and Visualization Tool
+        历史地名探索与可视化工具
       </div>
     </div>
     <div>
